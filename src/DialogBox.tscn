@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c13uhdgy6gptu"]
+
+[ext_resource type="Texture2D" uid="uid://drlool4qbpqk7" path="res://assets/Black.svg" id="1_67fvq"]
+[ext_resource type="Script" path="res://src/DialogBox.gd" id="1_y6ice"]
+
+[node name="DialogBox" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_y6ice")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = 265.0
+offset_top = 118.0
+offset_right = 487.0
+offset_bottom = 158.0
+texture = ExtResource("1_67fvq")
+
+[node name="TextLabel" type="Label" parent="."]
+offset_left = 267.0
+offset_top = 118.0
+offset_right = 486.0
+offset_bottom = 144.0

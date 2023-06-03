@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bu5mlic6qfnxd"]
+
+[ext_resource type="PackedScene" uid="uid://dr572j3a1am4v" path="res://src/Player.tscn" id="1_cctgq"]
+[ext_resource type="Script" path="res://src/RigidBody2D.gd" id="3_8tw7r"]
+[ext_resource type="Texture2D" uid="uid://bfop086ms71jb" path="res://assets/icon.svg" id="4_7hg4k"]
+[ext_resource type="Script" path="res://src/Character Test.gd" id="5_pjxu3"]
+[ext_resource type="PackedScene" uid="uid://c13uhdgy6gptu" path="res://src/DialogBox.tscn" id="6_qr6qx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8poj"]
+size = Vector2(125, 125)
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+metadata/Interactable = false
+
+[node name="Player" parent="." instance=ExtResource("1_cctgq")]
+position = Vector2(718, 389)
+
+[node name="Object Test" type="RigidBody2D" parent="."]
+position = Vector2(429, 386)
+script = ExtResource("3_8tw7r")
+metadata/Interactable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object Test"]
+shape = SubResource("RectangleShape2D_p8poj")
+metadata/Interactable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Object Test"]
+texture = ExtResource("4_7hg4k")
+metadata/Interactable = false
+
+[node name="Character Test" type="RigidBody2D" parent="."]
+position = Vector2(190, 123)
+script = ExtResource("5_pjxu3")
+metadata/Interactable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character Test"]
+shape = SubResource("RectangleShape2D_p8poj")
+metadata/Interactable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Character Test"]
+texture = ExtResource("4_7hg4k")
+metadata/Interactable = false
+
+[node name="DialogBox" parent="." instance=ExtResource("6_qr6qx")]
+layer = 2
+metadata/Interactable = false
